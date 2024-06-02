@@ -1,0 +1,17 @@
+{
+  "name": "custom short cuts",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "customShortcuts.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {},
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+V"
+      }
+    }
+  }
+}
