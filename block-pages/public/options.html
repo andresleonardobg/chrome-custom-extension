@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Configuración de bloqueo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, button {
+      padding: 6px;
+      margin: 6px 0;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .site-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Configuración de sitios bloqueados</h1>
+
+  <label>
+    Sitio (ej: facebook.com):
+    <input type="text" id="siteInput" />
+  </label>
+
+  <label>
+    Tiempo límite diario (minutos):
+    <input type="number" id="limitInput" min="1" />
+  </label>
+
+  <button id="addBtn">Agregar o actualizar</button>
+
+  <h2>Lista de sitios configurados</h2>
+  <ul id="siteList"></ul>
+
+  <script src="options.js"></script>
+</body>
+</html>
