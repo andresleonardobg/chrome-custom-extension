@@ -25,12 +25,12 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["block.html", "block.css"],
+      "resources": ["block/block.html", "options/block.css"],
       "matches": ["<all_urls>"]
     }
   ],
   "action": {
     "default_title": "Block pages"
   },
-  "options_page": "options.html"
+  "options_page": "options/options.html"
 }

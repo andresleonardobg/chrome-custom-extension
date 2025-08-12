@@ -5,7 +5,6 @@ const TRACKED_SITES : Array<string>= ["instagram.com", "facebook.com"];
 // const config = await chrome.storage.local.get("siteLimits");
 // const siteLimits: { [host: string]: number } = config.siteLimits || {};
 
-
 interface UsageData {
   [hostname: string]: {
     minutesToday: number;
@@ -14,7 +13,7 @@ interface UsageData {
   };
 }
 
-//create/delete dynamic rules
+//create id for dinamic rules
 function hashId(host: string): number {
   // Convierte el hostname en un número único (simple hash numérico)
   return host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
@@ -31,7 +30,7 @@ async function addBlockRule(hostname: string) {
         priority: 1,
         action: {
           type: "redirect",
-          redirect: { extensionPath: "/block.html" }
+          redirect: { extensionPath: "block/block.html" }
         },
         condition: {
           urlFilter: hostname,
@@ -97,7 +96,7 @@ setInterval(async () => {
 
       // Redirige si ya está abierta
       chrome.tabs.update(tab.id, {
-        url: chrome.runtime.getURL("block.html")
+        url: chrome.runtime.getURL("block/block.html")
       });
     }
 
